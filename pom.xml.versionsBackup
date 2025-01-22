@@ -43,13 +43,13 @@
 		<dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
-            
+            <version>3.0.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>9.0.0.CR1</version>
+            <version>8.0.0.Final</version>
         </dependency>
 
 
@@ -115,21 +115,4 @@
 		</plugins>
 	</build>
 
-
-
-	<dependencyManagement>
-	
-
-		<dependencies>
-		
-
-			<dependency>
-				<groupId>jakarta.annotation</groupId>
-				<artifactId>jakarta.annotation-api</artifactId>
-				<version>2.1.1</version>
-			</dependency>
-
-		</dependencies>
-
-	</dependencyManagement>
 </project>
