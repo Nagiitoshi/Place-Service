@@ -84,7 +84,13 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+	
+   <dependency>
+     <groupId>com.github.slugify</groupId>
+     <artifactId>slugify</artifactId>
+     <version>3.0.7</version>
+   </dependency>
+ </dependencies>
 
 	<build>
 		<plugins>
