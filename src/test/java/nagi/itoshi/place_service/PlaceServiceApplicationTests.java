@@ -1,5 +1,8 @@
 package nagi.itoshi.place_service;
 
+
+import java.nio.charset.StandardCharsets;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -60,6 +63,7 @@ class PlaceServiceApplicationTests {
 				.expectStatus().isBadRequest();
 	}
 
+
 	@Test
 	public void testEditPlaceSuccess() {
 		final String newName = "New Name";
@@ -73,15 +77,15 @@ class PlaceServiceApplicationTests {
 				.uri("/places/1")
 				.bodyValue(
 						new PlaceRequest(newName, newCity, newState))
-				.exchange()
-				.expectStatus().isOk()
-				.expectBody()
-				.jsonPath("name").isEqualTo(newName)
-				.jsonPath("city").isEqualTo(newCity)
-				.jsonPath("state").isEqualTo(newState)
-				.jsonPath("slug").isEqualTo(newSlug)
-				.jsonPath("createdAt").isNotEmpty()
-				.jsonPath("updateAt").isNotEmpty();
+						.exchange()
+						.expectStatus().isOk()
+						.expectBody()
+						.jsonPath("$.name").isEqualTo(newName)
+						.jsonPath("$.city").isEqualTo(newCity)
+						.jsonPath("$.state").isEqualTo(newState)
+						.jsonPath("$.slug").isEqualTo(newSlug)
+						.jsonPath("$.createdAt").isNotEmpty()
+						.jsonPath("$.updateAt").isNotEmpty();
 
 		// Updates only name
 		webTestClient
@@ -146,6 +150,9 @@ class PlaceServiceApplicationTests {
 				.jsonPath("createdAt").isNotEmpty()
 				.jsonPath("updateAt").isNotEmpty();
 	}
+
+
+
 
 	@Test
 	public void testGetFailure() {
