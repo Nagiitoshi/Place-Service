@@ -42,7 +42,7 @@ class PlaceServiceApplicationTests {
 				.jsonPath("state").isEqualTo(state)
 				.jsonPath("slug").isEqualTo(slug)
 				.jsonPath("createdAt").isNotEmpty()
-				.jsonPath("updatedAt").isNotEmpty();
+				.jsonPath("updateAt").isNotEmpty();
 	}
 
 	@Test
@@ -81,7 +81,7 @@ class PlaceServiceApplicationTests {
 				.jsonPath("state").isEqualTo(newState)
 				.jsonPath("slug").isEqualTo(newSlug)
 				.jsonPath("createdAt").isNotEmpty()
-				.jsonPath("updatedAt").isNotEmpty();
+				.jsonPath("updateAt").isNotEmpty();
 
 		// Updates only name
 		webTestClient
@@ -97,7 +97,7 @@ class PlaceServiceApplicationTests {
 				.jsonPath("state").isEqualTo(newState)
 				.jsonPath("slug").isEqualTo(CENTRAL_PERK.slug())
 				.jsonPath("createdAt").isNotEmpty()
-				.jsonPath("updatedAt").isNotEmpty();
+				.jsonPath("updateAt").isNotEmpty();
 
 		// Updates only city
 		webTestClient
@@ -113,7 +113,7 @@ class PlaceServiceApplicationTests {
 				.jsonPath("state").isEqualTo(newState)
 				.jsonPath("slug").isEqualTo(CENTRAL_PERK.slug())
 				.jsonPath("createdAt").isNotEmpty()
-				.jsonPath("updatedAt").isNotEmpty();
+				.jsonPath("updateAt").isNotEmpty();
 
 		// Updates only state
 		webTestClient
@@ -129,7 +129,7 @@ class PlaceServiceApplicationTests {
 				.jsonPath("state").isEqualTo(CENTRAL_PERK.state())
 				.jsonPath("slug").isEqualTo(CENTRAL_PERK.slug())
 				.jsonPath("createdAt").isNotEmpty()
-				.jsonPath("updatedAt").isNotEmpty();
+				.jsonPath("updateAt").isNotEmpty();
 	}
 
 	@Test
@@ -144,7 +144,7 @@ class PlaceServiceApplicationTests {
 				.jsonPath("state").isEqualTo(CENTRAL_PERK.state())
 				.jsonPath("slug").isEqualTo(CENTRAL_PERK.slug())
 				.jsonPath("createdAt").isNotEmpty()
-				.jsonPath("updatedAt").isNotEmpty();
+				.jsonPath("updateAt").isNotEmpty();
 	}
 
 	@Test
@@ -169,7 +169,7 @@ class PlaceServiceApplicationTests {
 				.jsonPath("$[0].slug").isEqualTo(CENTRAL_PERK.slug())
 				.jsonPath("$[0].state").isEqualTo(CENTRAL_PERK.state())
 				.jsonPath("$[0].createdAt").isNotEmpty()
-				.jsonPath("$[0].updatedAt").isNotEmpty();
+				.jsonPath("$[0].updateAt").isNotEmpty();
 	}
 
 	@Test
@@ -186,7 +186,7 @@ class PlaceServiceApplicationTests {
 				.jsonPath("$[0].slug").isEqualTo(CENTRAL_PERK.slug())
 				.jsonPath("$[0].state").isEqualTo(CENTRAL_PERK.state())
 				.jsonPath("$[0].createdAt").isNotEmpty()
-				.jsonPath("$[0].updatedAt").isNotEmpty();
+				.jsonPath("$[0].updateAt").isNotEmpty();
 	}
 
 	@Test

@@ -14,7 +14,7 @@ public class PlaceMapper {
         return new Place(place.id(), name, place.slug(), city, state, place.createdAt(), place.updateAt());
     }
 
-    public static PlaceResponse tResponse(Place place){
+    public static PlaceResponse toResponse(Place place){
         return new PlaceResponse(place.name(), place.slug(),
         place.city(), place.state(), place.createdAt(), place.updateAt());
     }

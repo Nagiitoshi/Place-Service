@@ -31,26 +31,26 @@ public class PlaceController {
 
     @PostMapping
     public ResponseEntity<Mono<PlaceResponse>> create(@Valid @RequestBody PlaceRequest request) {
-        var placeResponse = placeService.create(request).map(PlaceMapper::tResponse);
+        var placeResponse = placeService.create(request).map(PlaceMapper::toResponse);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(placeResponse);
     }
 
     @PatchMapping("{id}")
     public Mono<PlaceResponse> edit(@PathVariable("id") Long id, @RequestBody PlaceRequest request) {
-        return placeService.edit(id, request).map(PlaceMapper::tResponse);
+        return placeService.edit(id, request).map(PlaceMapper::toResponse);
     }
 
     @GetMapping("{id}")
     public Mono<ResponseEntity<PlaceResponse>> get(@PathVariable("id") Long id){
         return placeService.get(id)
-        .map(place -> ResponseEntity.ok(PlaceMapper.tResponse(place)))
+        .map(place -> ResponseEntity.ok(PlaceMapper.toResponse(place)))
         .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
     @GetMapping
     public Flux<PlaceResponse> list(@RequestParam(required = false) String name){
-        return placeService.list(name).map(PlaceMapper::tResponse);
+        return placeService.list(name).map(PlaceMapper::toResponse);
     }
     
     
